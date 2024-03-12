@@ -2,12 +2,20 @@
   "scripts": {
     "dev": "bun run --hot src/index.ts",
     "docker:up": "docker compose up -d",
-    "docker:down": "docker compose down"
+    "docker:down": "docker compose down",
+    "format": "prettier --write .",
+    "lint": "eslint ."
   },
   "dependencies": {
     "hono": "^4.1.0"
   },
   "devDependencies": {
-    "@types/bun": "latest"
-  }
+    "@types/bun": "latest",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.2.5"
+  },
+  "packageManager": "pnpm@8.15.2+sha1.798034f615aa211c6c2ae00010cc20be5fc102ee"
 }
