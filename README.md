@@ -1,11 +1,3 @@
-To install dependencies:
-```sh
-bun install
-```
+## Tech
 
-To run:
-```sh
-bun run dev
-```
-
-open http://localhost:3000
+- [Bun](https://bun.sh) -> Javascript runtime
