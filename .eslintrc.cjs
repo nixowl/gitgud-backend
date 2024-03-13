@@ -29,7 +29,7 @@ const config = {
   },
   overrides: [
     {
-      files: ['src/modules/user/user.routes.ts', 'src/modules/post/post.routes.ts'],
+      files: ['src/modules/auth/auth.routes.ts', 'src/modules/post/post.routes.ts'],
       rules: {
         '@typescript-eslint/no-misused-promises': 'off',
       },
