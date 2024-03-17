@@ -17,6 +17,8 @@
     "hono": "^4.1.0",
     "nanoid": "3.3.4",
     "pg": "^8.11.3",
+    "pino": "^8.19.0",
+    "pino-pretty": "^10.3.1",
     "postgres": "^3.4.3",
     "typescript": "^5.4.2",
     "zod": "^3.22.4"
@@ -29,6 +31,5 @@
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "prettier": "^3.2.5"
-  },
-  "packageManager": "pnpm@8.15.2+sha1.798034f615aa211c6c2ae00010cc20be5fc102ee"
+  }
 }
