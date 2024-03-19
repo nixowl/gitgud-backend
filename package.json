@@ -7,7 +7,9 @@
     "lint": "eslint .",
     "db:generate": "drizzle-kit generate:pg",
     "db:push": "drizzle-kit push:pg",
-    "db:studio": "pnpm drizzle-kit studio --port 8911 --verbose"
+    "db:studio": "pnpm drizzle-kit studio --port 8911 --verbose",
+    "doppler:dev": "doppler run --project gitgud --config dev bun run --hot src/index.ts",
+    "doppler:db:push": "doppler run --project gitgud --config dev pnpm run db:push"
   },
   "dependencies": {
     "@types/pg": "^8.11.2",

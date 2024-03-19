@@ -9,6 +9,7 @@ const app = new Hono().basePath('/api/v1');
 // this logger logs every request
 app.use('*', logger());
 
+
 // routes
 app.route('/auth', authRoutes);
 app.route('/user', userRoutes);
@@ -25,6 +26,6 @@ app.get('/test-user', async (c) => {
 
 // this is how we expose port and add api methods
 export default {
-  port: 8080,
+  port: process.env.PORT ?? 8080,
   fetch: app.fetch,
 };
