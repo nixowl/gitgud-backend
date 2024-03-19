@@ -1,5 +1,6 @@
 import { type Context } from 'hono';
 import { deleteUser, findAllUsers, findUserById, updateUser } from './user.service';
+import { type UpdateUserType } from './user.validator';
 
 export async function getSessionUserHandler(c: Context) {
   const userId = c.get('userId') as string;
@@ -33,7 +34,7 @@ export async function getUserByIdHandler(c: Context) {
 
 export async function updateUserHandler(c: Context) {
   const userId = c.req.param('id');
-  const updatedUser = await c.req.json();
+  const updatedUser: UpdateUserType = await c.req.json();
   const user = await updateUser(userId, updatedUser);
 
   if (!user) {
