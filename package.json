@@ -8,10 +8,11 @@
     "db:generate": "drizzle-kit generate:pg",
     "db:push": "drizzle-kit push:pg",
     "db:studio": "pnpm drizzle-kit studio --port 8911 --verbose",
-    "doppler:dev": "doppler run --project gitgud --config dev bun run --hot src/index.ts",
-    "doppler:db:push": "doppler run --project gitgud --config dev pnpm run db:push"
+    "doppler:dev": "doppler run --project gitgud --config dev --  bun run --hot src/index.ts",
+    "doppler:db:push": "doppler run --project gitgud --config dev --  pnpm run db:push"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.536.0",
     "argon2": "^0.40.1",
     "dotenv": "^16.4.5",
     "drizzle-orm": "^0.30.1",
