@@ -42,5 +42,3 @@ export async function insertToken({ hash, scope, userId, expiry }: TokenInsertTy
 
   return token[0];
 }
-
-

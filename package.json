@@ -13,6 +13,8 @@
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.536.0",
+    "@aws-sdk/s3-presigned-post": "^3.536.0",
+    "@aws-sdk/s3-request-presigner": "^3.537.0",
     "argon2": "^0.40.1",
     "dotenv": "^16.4.5",
     "drizzle-orm": "^0.30.1",
