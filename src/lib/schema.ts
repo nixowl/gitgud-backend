@@ -14,7 +14,7 @@ export const tokens = pgTable('tokens', {
   hash: text('hash').notNull(),
   userId: text('user_id')
     .notNull()
-    .references(() => users.id),
+    .references(() => users.id, { onDelete: 'cascade' }),
   expiry: timestamp('expiry').notNull(),
   scope: text('scope').notNull(),
 });
