@@ -1,10 +1,10 @@
 import { S3Client } from '@aws-sdk/client-s3';
-import process from 'process';
+import { ENV } from '~/lib/env';
 
 export const s3 = new S3Client({
-  region: 'eu-central-1',
+  region: ENV.AWS_REGION,
   credentials: {
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    accessKeyId: ENV.AWS_ACCESS_KEY_ID,
+    secretAccessKey: ENV.AWS_SECRET_ACCESS_KEY,
   },
 });

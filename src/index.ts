@@ -6,12 +6,13 @@ import { users } from '~/lib/schema';
 import { authRoutes } from '~/module/auth/auth.route';
 import { userRoutes } from './module/user/user.route';
 import { awsRoutes } from '~/module/aws/aws.route';
+import { ENV } from '~/lib/env';
 const app = new Hono().basePath('/api/v1');
 
 // this logger logs every request
 app.use('*', logger());
 app.use('*', cors({
-  origin: 'http://localhost:3000',
+  origin: ENV.CLIENT_ADDRESS,
 }));
 
 // routes
@@ -31,6 +32,6 @@ app.get('/test-user', async (c) => {
 
 // this is how we expose port and add api methods
 export default {
-  port: process.env.PORT ?? 8080,
+  port: ENV.PORT ?? 8079,
   fetch: app.fetch,
 };

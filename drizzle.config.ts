@@ -1,12 +1,11 @@
 import type { Config } from 'drizzle-kit';
-import 'dotenv/config';
+import { ENV } from '~/lib/env';
 
-//TODO env validation
 export default {
   schema: './src/lib/schema.ts',
   out: './migration',
   driver: 'pg',
   dbCredentials: {
-    connectionString: process.env.DATABASE_URL!,
+    connectionString: ENV.DATABASE_URL,
   },
 } satisfies Config;
