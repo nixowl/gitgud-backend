@@ -17,7 +17,7 @@ export async function findTokenByHash(hash: string): Promise<TokenType | undefin
 
 export async function findAllUsers(): Promise<UserType[]> {
   const dbUsers = await db.select().from(users);
-  return dbUsers
+  return dbUsers;
 }
 
 export async function findUserByEmail(email: string): Promise<UserType | undefined> {
@@ -28,20 +28,20 @@ export async function findUserByEmail(email: string): Promise<UserType | undefin
 
 export async function updateUser(id: string, updatedUser: UpdateUserType): Promise<UserType | undefined> {
   const { username, email } = updatedUser;
-  const updates = Object.entries({ username, email }).filter(([_, value]) => value !== undefined)
+  const updates = Object.entries({ username, email }).filter(([_, value]) => value !== undefined);
 
   if (updates.length === 0) {
-    return findUserById(id)
+    return findUserById(id);
   }
 
-  const updatedUserData = Object.fromEntries(updates) as Partial<UserType>
+  const updatedUserData = Object.fromEntries(updates) as Partial<UserType>;
 
-  const dbUser = await db.update(users).set(updatedUserData).where(eq(users.id, id)).returning()
+  const dbUser = await db.update(users).set(updatedUserData).where(eq(users.id, id)).returning();
 
-  return dbUser[0]
+  return dbUser[0];
 }
 
 export async function deleteUser(id: string): Promise<UserType | undefined> {
-  const deletedUser = await db.delete(users).where(eq(users.id, id)).returning()
-  return deletedUser[0]
+  const deletedUser = await db.delete(users).where(eq(users.id, id)).returning();
+  return deletedUser[0];
 }

@@ -1,5 +1,5 @@
-import pino from 'pino'
-import 'pino-pretty'
+import pino from 'pino';
+import 'pino-pretty';
 
 export const log = pino({
   transport: {
