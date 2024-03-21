@@ -15,6 +15,13 @@
       "when": 1710854870596,
       "tag": "0001_supreme_sauron",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1711033575320,
+      "tag": "0002_great_post",
+      "breakpoints": true
     }
   ]
 }

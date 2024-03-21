@@ -41,6 +41,7 @@ export async function updateUser(id: string, updatedUser: UpdateUserType): Promi
   return dbUser[0];
 }
 
+//TODO check!
 export async function deleteUser(id: string): Promise<UserType | undefined> {
   const deletedUser = await db.delete(users).where(eq(users.id, id)).returning();
   return deletedUser[0];

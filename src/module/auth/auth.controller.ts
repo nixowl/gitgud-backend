@@ -8,6 +8,7 @@ import {
 import { hashPassword, insertToken, insertUser, verifyPassword } from '~/module/auth/auth.service';
 import { nanoid } from 'nanoid';
 import { findUserByEmail } from '~/module/user/user.service';
+import { log } from '~/lib/logger';
 
 const day = 24 * 60 * 60 * 1000;
 
@@ -33,7 +34,7 @@ export async function registerUserHandler(c: Context) {
     c.status(201);
     return c.json({ token: token.hash });
   } catch (e) {
-    console.error(e);
+    log.error(e);
     c.status(500);
     return c.json({ error: 'Internal server error' });
   }
