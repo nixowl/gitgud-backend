@@ -1,4 +1,4 @@
-import * as z from "zod";
+import * as z from 'zod';
 import { log } from '~/lib/logger';
 
 const envSchema = z.object({
@@ -19,7 +19,7 @@ const parsedEnvs = envSchema.safeParse({
   DATABASE_URL: process.env.DATABASE_URL,
   S3_BUCKET_NAME: process.env.S3_BUCKET_NAME,
   CLIENT_ADDRESS: process.env.CLIENT_ADDRESS,
-})
+});
 
 if (!parsedEnvs.success) {
   log.error(parsedEnvs.error.errors);

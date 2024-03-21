@@ -9,6 +9,7 @@
     "db:push": "drizzle-kit push:pg",
     "db:studio": "bun drizzle-kit studio --port 8911 --verbose",
     "doppler:dev": "doppler run --project gitgud --config dev --  bun run --hot src/index.ts",
+    "doppler:db:generate": "doppler run --project gitgud --config dev -- drizzle-kit generate:pg",
     "doppler:db:push": "doppler run --project gitgud --config dev -- bun run db:push",
     "doppler:db:studio": "doppler run --project gitgud --config dev -- bun drizzle-kit studio --port 8911 --verbose"
   },
